@@ -213,7 +213,7 @@ class App extends Component{
                         <button id="start_stop" onClick={this.startCounting}>
                             <FontAwesomeIcon icon={solid('play')}/>
                             <FontAwesomeIcon icon={solid('pause')}/>
-                            {/*<FontAwesomeIcon icon={regular('play-pause')}/>*/}
+                            {/*<FontAwesomeIcon icon={solid('play-pause')}/>*/}
                             <br />Start/stop</button>
                         <button id='reset' onClick={this.reset}><FontAwesomeIcon icon={solid('power-off')}/> <br />Reset</button>
                     </div>
