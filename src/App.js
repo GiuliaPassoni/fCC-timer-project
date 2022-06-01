@@ -187,35 +187,38 @@ class App extends Component{
 
         return(
             <div className='all'>
-                <div className='container dur'>
-                    {/*
-          <div>
-            <h4>Testing?</h4>
-            <input type="checkbox" id="testing" name="testing" value="bool" checked={this.state.isChecked} onChange={this.testMode}/>
-          </div>
-          */}
-                    <div className='breakall'>
-                        <button id="break-increment" disabled={this.state.running} onClick={this.breakPlus.bind(this)}><FontAwesomeIcon icon={solid('arrow-up')}/></button>
-                        <Duration id='break-label' name="Break" insideId="break-length" defVal={this.state.br_len}/>
-                        <button id ="break-decrement" disabled={this.state.running} onClick={this.breakMinus.bind(this)}><FontAwesomeIcon icon={solid('arrow-down')}/></button>
+                <main>
+                    <div className='container dur'>
+                        {/*
+              <div>
+                <h4>Testing?</h4>
+                <input type="checkbox" id="testing" name="testing" value="bool" checked={this.state.isChecked} onChange={this.testMode}/>
+              </div>
+              */}
+                        <div className='breakall'>
+                            <button id="break-increment" disabled={this.state.running} onClick={this.breakPlus.bind(this)}><FontAwesomeIcon icon={solid('arrow-up')}/></button>
+                            <Duration id='break-label' name="Break" insideId="break-length" defVal={this.state.br_len}/>
+                            <button id ="break-decrement" disabled={this.state.running} onClick={this.breakMinus.bind(this)}><FontAwesomeIcon icon={solid('arrow-down')}/></button>
+                        </div>
+                        <div className='seshall'>
+                            <button id="session-increment" disabled={this.state.running} onClick={this.sessionPlus.bind(this)}><FontAwesomeIcon icon={solid('arrow-up')}/></button>
+                            <Duration id='session-label' name="Session" insideId="session-length" defVal={this.state.ss_len}/>
+                            <button id ="session-decrement" disabled={this.state.running} onClick={this.sessionMinus.bind(this)}><FontAwesomeIcon icon={solid('arrow-down')}/></button>
+                        </div>
                     </div>
-                    <div className='seshall'>
-                        <button id="session-increment" disabled={this.state.running} onClick={this.sessionPlus.bind(this)}><FontAwesomeIcon icon={solid('arrow-up')}/></button>
-                        <Duration id='session-label' name="Session" insideId="session-length" defVal={this.state.ss_len}/>
-                        <button id ="session-decrement" disabled={this.state.running} onClick={this.sessionMinus.bind(this)}><FontAwesomeIcon icon={solid('arrow-down')}/></button>
+                    <div className='container timer'>
+                        <div id="timer-label">{timer_label}</div>
+                        <div id="time-left">{currentTime}</div>
+                        <audio id='beep' src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
+                        <button id="start_stop" onClick={this.startCounting}>
+                            <FontAwesomeIcon icon={solid('play')}/>
+                            <FontAwesomeIcon icon={solid('pause')}/>
+                            {/*<FontAwesomeIcon icon={regular('play-pause')}/>*/}
+                            <br />Start/stop</button>
+                        <button id='reset' onClick={this.reset}><FontAwesomeIcon icon={solid('power-off')}/> <br />Reset</button>
                     </div>
-                </div>
-                <div className='container timer'>
-                    <div id="timer-label">{timer_label}</div>
-                    <div id="time-left">{currentTime}</div>
-                    <audio id='beep' src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
-                    <button id="start_stop" onClick={this.startCounting}>
-                        <FontAwesomeIcon icon={solid('play')}/>
-                        <FontAwesomeIcon icon={solid('pause')}/>
-                        {/*<FontAwesomeIcon icon={regular('play-pause')}/>*/}
-                        <br />Start/stop</button>
-                    <button id='reset' onClick={this.reset}><FontAwesomeIcon icon={solid('power-off')}/> <br />Reset</button>
-                </div>
+                </main>
+                <footer>Coded by Giulia Passoni 2022</footer>
             </div>
         )
     }
